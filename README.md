@@ -1,5 +1,11 @@
 # react-i18n-kit
 
+[![npm](https://img.shields.io/npm/v/react-i18n-kit.svg?style=flat-square)](https://www.npmjs.com/package/react-i18n-kit)
+![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-i18n-kit.svg?style=flat-square)
+[![Travis branch](https://img.shields.io/travis/com/aichbauer/react-i18n-kit/master.svg?style=flat-square)](https://travis-ci.com/aichbauer/react-i18n-kit)
+[![Codecov branch](https://img.shields.io/codecov/c/github/aichbauer/react-i18n-kit/master.svg?style=flat-square)](https://codecov.io/gh/aichbauer/react-i18n-kit)
+[![docz](https://img.shields.io/badge/docs%20with-docz-1F2D3D.svg?style=flat-square)](https://aichbauer.github.io/react-i18n-kit)
+
 > I18n for your React Components
 
 ## Table of Contents
