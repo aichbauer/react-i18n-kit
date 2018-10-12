@@ -1,0 +1,67 @@
+---
+name: Functions
+route: /functions
+order: 2
+---
+
+import { Translator } from './components';
+
+<Translator heading page="functions" num="0" />
+
+<Translator page="functions" num="0" />
+
+<Translator heading page="functions" num="1" />
+
+<Translator page="functions" num="1" />
+
+<Translator heading page="functions" num="2" />
+
+<Translator page="functions" num="2" />
+
+```js
+const i18n = withI18n(Component, data, options);
+```
+
+<Translator heading page="functions" num="3" />
+
+<Translator page="functions" num="3" />
+
+<Translator heading page="functions" num="4" />
+
+<Translator page="functions" num="4" />
+
+```jsx
+const Text = (props) => (
+  <div>
+    {props.i18n.text}
+  </div>
+);
+```
+
+<Translator heading page="functions" num="5" />
+
+<Translator page="functions" num="5" />
+
+```js
+const data = {
+  de: {
+    text: 'Hallo Welt!',
+  },
+  en: {
+    text: 'Hello World!',
+  },
+};
+```
+
+<Translator heading page="functions" num="6" />
+
+<Translator page="functions" num="6" />
+
+<Translator page="functions" num="7" />
+
+```js
+const options = {
+  lang: 'de',
+  fallback: 'de',
+};
+```

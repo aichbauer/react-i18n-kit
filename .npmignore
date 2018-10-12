@@ -1,0 +1,21 @@
+# generated
+coverage
+.nyc*
+*.log
+*.cache
+.eslintcache
+package-lock.json
+yarn.lock
+.docz
+
+# config
+.babelrc
+.eslintrc
+.gitignore
+.travis.yml
+.vscode
+doczrc.js
+
+# other
+src
+docz

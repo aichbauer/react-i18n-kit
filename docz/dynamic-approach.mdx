@@ -1,0 +1,107 @@
+---
+name: Dynamic Approach
+route: /dynamic-approach
+order: 5
+---
+
+import { Playground } from 'docz';
+import { Translator, DynamicText } from './components';
+
+<Translator heading page="dynamicApproach" num="0" />
+
+<Translator page="dynamicApproach" num="0" />
+<Translator page="dynamicApproach" num="1" />
+<Translator page="dynamicApproach" num="2" />
+
+```jsx
+// './i18n/index.js'
+const data = {
+  de: {
+    text: 'Hallo Welt!',
+  },
+  en: {
+    text: 'Hello World!',
+  },
+  es: {
+    text: '!Hola Mundo!',
+  },
+};
+
+export { data };
+```
+
+<Translator page="dynamicApproach" num="3" />
+
+```jsx
+// './Text/index.js'
+import React from 'react';
+
+const Text = (props) => (
+  <div>
+    {props.i18n.text}
+  </div>
+);
+
+export { Text };
+```
+
+<Translator page="dynamicApproach" num="4" />
+
+```jsx
+import React from 'react';
+import { withI18n } from 'react-i18n-kit';
+
+import { data } from './i18n';
+import { Text } from './Text';
+
+class DynamicText extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lang: 'en',
+    };
+
+    this.handleLanguageChange = this.handleLanguageChange.bind(this);
+  }
+
+  handleLanguageChange(lang) {
+    this.setState({
+      lang,
+    });
+  }
+
+  render() {
+    const { lang } = this.state;
+    const TextI18n = withI18n(Text, data);
+
+    return (
+      <React.Fragement>
+        <button
+          onClick={() => this.handleLanguageChange('en')}
+        >
+          English
+        </button>
+        <button
+          onClick={() => this.handleLanguageChange('es')}
+        >
+          Español
+        </button >
+        <button
+          onClick={() => this.handleLanguageChange('de')}
+        >
+          Deutsch
+        </button >
+        <TextI18n lang={lang} />
+      </React.Fragement>
+    );
+  }
+}
+
+export { DynamicText };
+```
+
+<Translator page="dynamicApproach" num="5" />
+
+<Playground>
+  <DynamicText />
+</Playground>

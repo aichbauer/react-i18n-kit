@@ -1,0 +1,75 @@
+{
+  "name": "react-i18n-kit",
+  "version": "0.0.0",
+  "description": "I18n for your React Components",
+  "main": "index.js",
+  "private": false,
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "lint": "eslint src --fix",
+    "pretest": "yarn run lint",
+    "test": "jest --coverage --env=jsdom",
+    "prepush": "yarn run test",
+    "build": "rm -rf lib; babel src --out-dir lib",
+    "prepare": "yarn run build"
+  },
+  "author": "Lukas Aichbauer <l.aichbauer@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "i18n",
+    "react",
+    "react-i18n-kit",
+    "translation",
+    "internationalization",
+    "reactjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aichbauer/react-i18n-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aichbauer/react-i18n-kit/issues"
+  },
+  "homepage": "https://github.com/aichbauer/react-i18n-kit",
+  "jest": {
+    "globals": {
+      "__DEV__": true
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
+    "docz": "^0.11.0",
+    "docz-plugin-css": "^0.11.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.0",
+    "jest": "^23.5.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-markdown": "^4.0.3",
+    "regenerator-runtime": "^0.12.1"
+  }
+}
