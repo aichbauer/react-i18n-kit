@@ -33,75 +33,45 @@ export { data };
 <Translator page="dynamicApproach" num="3" />
 
 ```jsx
-// './Text/index.js'
 import React from 'react';
+import { withI18n } from '../../../src';
 
-const Text = (props) => (
-  <div>
-    {props.i18n.text}
-  </div>
+import { data } from './i18n';
+
+const DynamicText = (props) => (
+  <React.Fragment>
+    <button
+      type="submit"
+      onClick={() => props.translate('en')}
+    >
+      English
+    </button>
+    <button
+      type="submit"
+      onClick={() => props.translate('es')}
+    >
+      Español
+    </button>
+    <button
+      type="submit"
+      onClick={() => props.translate('de')}
+    >
+      Deutsch
+    </button>
+    <div>
+      {props.i18n.text}
+    </div>
+  </React.Fragment>
 );
 
-export { Text };
+const DynamicTextWithI18n = withI18n(DynamicText, data);
+
+export { DynamicTextWithI18n as DynamicText };
+
 ```
 
 <Translator page="dynamicApproach" num="4" />
 
-```jsx
-import React from 'react';
-import { withI18n } from 'react-i18n-kit';
-
-import { data } from './i18n';
-import { Text } from './Text';
-
-class DynamicText extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lang: 'en',
-    };
-
-    this.handleLanguageChange = this.handleLanguageChange.bind(this);
-  }
-
-  handleLanguageChange(lang) {
-    this.setState({
-      lang,
-    });
-  }
-
-  render() {
-    const { lang } = this.state;
-    const TextI18n = withI18n(Text, data);
-
-    return (
-      <React.Fragement>
-        <button
-          onClick={() => this.handleLanguageChange('en')}
-        >
-          English
-        </button>
-        <button
-          onClick={() => this.handleLanguageChange('es')}
-        >
-          Español
-        </button >
-        <button
-          onClick={() => this.handleLanguageChange('de')}
-        >
-          Deutsch
-        </button >
-        <TextI18n lang={lang} />
-      </React.Fragement>
-    );
-  }
-}
-
-export { DynamicText };
-```
-
-<Translator page="dynamicApproach" num="5" />
-
 <Playground>
-  <DynamicText />
+  <DynamicText lang="en" />
 </Playground>

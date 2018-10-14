@@ -30,9 +30,17 @@ const i18n = withI18n(Component, data, options);
 
 <Translator page="functions" num="4" />
 
+<Translator page="functions" num="5" />
+
 ```jsx
 const Text = (props) => (
   <div>
+    <button onClick={() => props.translate('en')}>
+      English
+    <button/>
+    <button onClick={() => props.translate('de')}>
+      Deutsch
+    <button/>
     {props.i18n.text}
   </div>
 );
@@ -40,7 +48,7 @@ const Text = (props) => (
 
 <Translator heading page="functions" num="5" />
 
-<Translator page="functions" num="5" />
+<Translator page="functions" num="6" />
 
 ```js
 const data = {
@@ -55,9 +63,9 @@ const data = {
 
 <Translator heading page="functions" num="6" />
 
-<Translator page="functions" num="6" />
-
 <Translator page="functions" num="7" />
+
+<Translator page="functions" num="8" />
 
 ```js
 const options = {

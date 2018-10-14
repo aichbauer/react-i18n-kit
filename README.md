@@ -41,11 +41,11 @@ For more detailed information you can take a look at the [documentation](https:/
 
 ### withI18n
 
-This is the enhancer for your Components. If you wrap your Components in this function you get access to a `i18n` property.
+This is the enhancer for your Components. If you wrap your Components in this function you get access to a `i18n` and a `translate` property.
 
 #### Syntax
 
-Returns a component which renders the passed `Component`.
+Returns a component which renders the wrapped `Component`.
 
 ```js
 const i18n = withI18n(Component, data, options);
@@ -63,9 +63,22 @@ options | `object` | false | | The options for your translations
 
 An example for the `Component` parameter.
 
+This component gets access to 2 exposed properties.
+
+Property| Type | Description
+---|---|---
+i18n| `object` | The committed `data` object, but only for the corresponding language
+translate | `func` | The function for the dynamic translation (e.g. on a button click)
+
 ```jsx
 const Text = (props) => (
   <div>
+    <button onClick={() => props.translate('en')}>
+      English
+    <button/>
+    <button onClick={() => props.translate('de')}>
+      Deutsch
+    <button/>
     {props.i18n.text}
   </div>
 );

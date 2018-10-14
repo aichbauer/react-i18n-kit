@@ -1,54 +1,34 @@
-
 import React from 'react';
 import { withI18n } from '../../../src';
 
 import { data } from './i18n';
-import { Text } from './Text';
 
-class DynamicText extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lang: 'en',
-    };
+const DynamicText = (props) => (
+  <React.Fragment>
+    <button
+      type="submit"
+      onClick={() => props.translate('en')}
+    >
+      English
+    </button>
+    <button
+      type="submit"
+      onClick={() => props.translate('es')}
+    >
+      Español
+    </button>
+    <button
+      type="submit"
+      onClick={() => props.translate('de')}
+    >
+      Deutsch
+    </button>
+    <div>
+      {props.i18n.text}
+    </div>
+  </React.Fragment>
+);
 
-    this.handleLanguageChange = this.handleLanguageChange.bind(this);
-  }
+const DynamicTextWithI18n = withI18n(DynamicText, data);
 
-  handleLanguageChange(lang) {
-    this.setState({
-      lang,
-    });
-  }
-
-  render() {
-    const { lang } = this.state;
-    const TextI18n = withI18n(Text, data);
-
-    return (
-      <React.Fragment>
-        <button
-          type="submit"
-          onClick={() => this.handleLanguageChange('en')}
-        >
-          English
-        </button>
-        <button
-          type="submit"
-          onClick={() => this.handleLanguageChange('es')}
-        >
-          Español
-        </button>
-        <button
-          type="submit"
-          onClick={() => this.handleLanguageChange('de')}
-        >
-          Deutsch
-        </button>
-        <TextI18n lang={lang} />
-      </React.Fragment>
-    );
-  }
-}
-
-export { DynamicText };
+export { DynamicTextWithI18n as DynamicText };
