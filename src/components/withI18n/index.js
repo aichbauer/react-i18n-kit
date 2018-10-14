@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserLanguage } from '../../config';
+import { browserLanguage } from '../../helper';
 
 const withI18n = (Component, data, options = {}) => (
   class I18n extends React.Component {
@@ -7,7 +7,7 @@ const withI18n = (Component, data, options = {}) => (
       super(props);
       this.state = {
         lang: props.lang || options.lang || browserLanguage,
-        fallback: options.fallback || 'en',
+        fallback: props.fallback || options.fallback || 'en',
         i18n: {},
       };
 
@@ -15,16 +15,15 @@ const withI18n = (Component, data, options = {}) => (
     }
 
     componentWillMount() {
-      this.translate();
+      const { lang } = this.state;
+
+      this.translate(lang);
     }
 
-    translate() {
-      const {
-        lang,
-        fallback,
-      } = this.state;
-
+    translate(lang) {
+      const { fallback } = this.state;
       this.setState({
+        lang,
         i18n: data[lang]
           || data[lang.split('-')[0]]
           || data[fallback]
@@ -38,10 +37,15 @@ const withI18n = (Component, data, options = {}) => (
       } = this.state;
       const {
         lang,
+        fallback,
         ...rest
       } = this.props;
       return (
-        <Component {...rest} i18n={i18n} />
+        <Component
+          {...rest}
+          i18n={i18n}
+          translate={(language) => this.translate(language)}
+        />
       );
     }
   }
