@@ -1,3 +1,7 @@
+1.2.0 - September, 09 2019
+
+* f9d259d Feat: support for ssr (#3) (Lukas Aichbauer)
+
 1.1.0 - October, 14 2018
 
 - e7ccc03 Feat: expose translate function, add property fallback (#2) (Lukas Aichbauer)
