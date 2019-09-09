@@ -1,31 +1,20 @@
-import React from 'react';
-import { withI18n } from '../../../src';
+import React from "react";
+import { withI18n } from "../../../src";
 
-import { data } from './i18n';
+import { data } from "./i18n";
 
-const DynamicText = (props) => (
+const DynamicText = props => (
   <React.Fragment>
-    <button
-      type="submit"
-      onClick={() => props.translate('en')}
-    >
+    <button type="submit" onClick={() => props.translate("en")}>
       English
     </button>
-    <button
-      type="submit"
-      onClick={() => props.translate('es')}
-    >
+    <button type="submit" onClick={() => props.translate("es")}>
       Español
     </button>
-    <button
-      type="submit"
-      onClick={() => props.translate('de')}
-    >
+    <button type="submit" onClick={() => props.translate("de")}>
       Deutsch
     </button>
-    <div>
-      {props.i18n.text}
-    </div>
+    <div>{props.i18n.text}</div>
   </React.Fragment>
 );
 

@@ -4,8 +4,8 @@ route: /dynamic-approach
 order: 5
 ---
 
-import { Playground } from 'docz';
-import { Translator, DynamicText } from './components';
+import { Playground } from "docz";
+import { Translator, DynamicText } from "./components";
 
 <Translator heading page="dynamicApproach" num="0" />
 
@@ -17,57 +17,45 @@ import { Translator, DynamicText } from './components';
 // './i18n/index.js'
 const data = {
   de: {
-    text: 'Hallo Welt!',
+    text: "Hallo Welt!",
   },
   en: {
-    text: 'Hello World!',
+    text: "Hello World!",
   },
   es: {
-    text: '!Hola Mundo!',
+    text: "!Hola Mundo!",
   },
 };
 
-export { data };
+export { data };
 ```
 
 <Translator page="dynamicApproach" num="3" />
 
 ```jsx
-import React from 'react';
-import { withI18n } from '../../../src';
+import React from "react";
+import { withI18n } from "../../../src";
 
-import { data } from './i18n';
+import { data } from "./i18n";
 
-const DynamicText = (props) => (
+const DynamicText = props => (
   <React.Fragment>
-    <button
-      type="submit"
-      onClick={() => props.translate('en')}
-    >
+    <button type="submit" onClick={() => props.translate("en")}>
       English
     </button>
-    <button
-      type="submit"
-      onClick={() => props.translate('es')}
-    >
+    <button type="submit" onClick={() => props.translate("es")}>
       Español
     </button>
-    <button
-      type="submit"
-      onClick={() => props.translate('de')}
-    >
+    <button type="submit" onClick={() => props.translate("de")}>
       Deutsch
     </button>
-    <div>
-      {props.i18n.text}
-    </div>
+    <div>{props.i18n.text}</div>
   </React.Fragment>
 );
 
 const DynamicTextWithI18n = withI18n(DynamicText, data);
 
 export { DynamicTextWithI18n as DynamicText };
-
 ```
 
 <Translator page="dynamicApproach" num="4" />

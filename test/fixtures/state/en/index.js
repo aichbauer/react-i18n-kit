@@ -1,9 +1,9 @@
 const en = {
   i18n: {
-    text: 'Hello World!',
+    text: "Hello World!",
   },
-  lang: 'en-US',
-  fallback: 'en',
+  lang: "en-US",
+  fallback: "en",
 };
 
 export { en };

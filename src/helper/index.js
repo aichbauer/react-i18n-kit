@@ -1,3 +1,3 @@
-import { browserLanguage } from './browser-language';
+import { browserLanguage } from "./browser-language";
 
 export { browserLanguage };

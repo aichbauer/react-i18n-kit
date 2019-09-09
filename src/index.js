@@ -1,3 +1,3 @@
-import { withI18n } from './components';
+import { withI18n } from "./components";
 
 export { withI18n };

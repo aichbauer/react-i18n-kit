@@ -1,3 +1,3 @@
-import { withI18n } from './withI18n';
+import { withI18n } from "./withI18n";
 
 export { withI18n };

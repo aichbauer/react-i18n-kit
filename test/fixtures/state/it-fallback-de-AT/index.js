@@ -1,9 +1,9 @@
 const itFallbackDeAT = {
   i18n: {
-    text: 'Hallo Welt!',
+    text: "Hallo Welt!",
   },
-  lang: 'it',
-  fallback: 'de-AT',
+  lang: "it",
+  fallback: "de-AT",
 };
 
 export { itFallbackDeAT };
