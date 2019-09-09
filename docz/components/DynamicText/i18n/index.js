@@ -1,12 +1,12 @@
 const data = {
   en: {
-    text: 'Hello World!',
+    text: "Hello World!",
   },
   de: {
-    text: 'Hallo Welt!',
+    text: "Hallo Welt!",
   },
   es: {
-    text: '!Hola Mundo!',
+    text: "!Hola Mundo!",
   },
 };
 

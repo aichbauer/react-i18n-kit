@@ -1,31 +1,33 @@
 code {
   background: #f4f6f9;
-  color: #7D899C;
+  color: #7d899c;
   margin: 0 3px;
   padding: 4px 6px;
   border-radius: 3px;
-  font-family: "Source Code Pro",monospace;
+  font-family: "Source Code Pro", monospace;
   font-size: 14px;
 }
 
 blockquote > p {
   margin: 0;
-  color: #7D899C;
+  color: #7d899c;
 }
 
 blockquote {
-  background: #EEF1F5;
-  border-left: 5px solid #CED4DE;
-  color: #7D899C;
+  background: #eef1f5;
+  border-left: 5px solid #ced4de;
+  color: #7d899c;
   margin: 25px 0;
   padding: 20px;
   font-style: italic;
   font-size: 18px;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
   text-decoration: none;
-  color: #0B5FFF;
+  color: #0b5fff;
 }
 
 #w-- {
@@ -35,31 +37,31 @@ a, a:visited, a:active {
 table {
   padding: 0;
   table-layout: auto;
-  box-shadow: 0 0 0 1px #CED4DE;
+  box-shadow: 0 0 0 1px #ced4de;
   background-color: transparent;
   border-spacing: 0;
   border-collapse: collapse;
   border-style: hidden;
   border-radius: 5px;
   font-size: 14px;
-  color: #13161F;
+  color: #13161f;
   overflow-y: hidden;
   display: block;
   width: 100%;
   margin-bottom: 20px;
-  font-family: "Source Code Pro",monospace;
+  font-family: "Source Code Pro", monospace;
   font-size: 14px;
   overflow-y: hidden;
   display: block;
   width: 100%;
   margin-bottom: 20px;
-  font-family: "Source Code Pro",monospace;
+  font-family: "Source Code Pro", monospace;
   font-size: 14px;
 }
 
 table > thead {
-  color: #7D899C;
-  background: #EEF1F5;
+  color: #7d899c;
+  background: #eef1f5;
 }
 
 thead th {
@@ -86,7 +88,7 @@ thead th:nth-child(5) {
 
 tbody > tr {
   display: table-row;
-  border-top: 1px solid #CED4DE;
+  border-top: 1px solid #ced4de;
 }
 
 tbody td {

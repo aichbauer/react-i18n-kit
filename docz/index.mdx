@@ -4,8 +4,8 @@ route: /
 order: 0
 ---
 
-import { Playground } from 'docz';
-import { Translator, Text } from './components';
+import { Playground } from "docz";
+import { Translator, Text } from "./components";
 
 <Translator page="index" heading num="0" />
 
@@ -22,10 +22,10 @@ $ npm i react-i18n-kit -S
 // './i18n/index.js'
 const data = {
   en: {
-    text: 'Hello World!',
+    text: "Hello World!",
   },
   de: {
-    text: 'Hallo Welt!',
+    text: "Hallo Welt!",
   },
 };
 
@@ -35,20 +35,16 @@ export { data };
 <Translator page="index" num="3" />
 
 ```js
-import React from 'react';
-import { withI18n } from 'react-i18n-package';
+import React from "react";
+import { withI18n } from "react-i18n-package";
 
-import { data } from './i18n';
+import { data } from "./i18n";
 
-const Text = (props) => (
-  <div>
-    {props.i18n.text}
-  </div>
-);
+const Text = props => <div>{props.i18n.text}</div>;
 
 const TextI18n = withI18n(Text, data);
 
-export { TextI18n as Text };
+export { TextI18n as Text };
 ```
 
 <Translator page="index" num="4" />

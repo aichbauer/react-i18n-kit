@@ -1,9 +1,9 @@
 const data = {
   en: {
-    text: 'Hello World!',
+    text: "Hello World!",
   },
   de: {
-    text: 'Hallo Welt!',
+    text: "Hallo Welt!",
   },
 };
 

@@ -4,8 +4,8 @@ route: /fallback
 order: 4
 ---
 
-import { Playground } from 'docz';
-import { Translator, TextFallback as Text } from './components';
+import { Playground } from "docz";
+import { Translator, TextFallback as Text } from "./components";
 
 <Translator heading page="fallback" num="0" />
 
@@ -17,44 +17,40 @@ import { Translator, TextFallback as Text } from './components';
 // ./i18n/index.js
 const data = {
   de: {
-    text: 'Hallo Welt!',
+    text: "Hallo Welt!",
   },
   en: {
-    text: 'Hello World!',
+    text: "Hello World!",
   },
   es: {
-    text: '!Hola Mundo!',
+    text: "!Hola Mundo!",
   },
 };
 
-export { data };
+export { data };
 ```
 
 <Translator page="fallback" num="3" />
 <Translator page="fallback" num="4" />
 
 ```jsx
-import React from 'react';
-import { withI18n } from 'react-i18n-kit';
+import React from "react";
+import { withI18n } from "react-i18n-kit";
 
-import { data } from './i18n';
+import { data } from "./i18n";
 
-const Text = (props) => (
-  <div>
-    {props.i18n.text}
-  </div>
-);
+const Text = props => <div>{props.i18n.text}</div>;
 
 /*
   Never set a language you do not have a translation for.
   We just use it as example, so you can see the fallback in your browser.
 */
 const TextI18n = withI18n(Text, data, {
-  lang: 'zh',
-  fallback: 'es',
+  lang: "zh",
+  fallback: "es",
 });
 
-export { TextI18n as Text };
+export { TextI18n as Text };
 ```
 
 <Translator page="fallback" num="5" />
