@@ -1,0 +1,66 @@
+---
+name: Dynamic Approach
+menu: Higher Order Component
+---
+
+import { Playground } from "docz";
+import { Translator, DynamicTextHoc as DynamicText } from "./components";
+
+<Translator heading page="dynamicApproachHoc" num="0" />
+
+<Translator page="dynamicApproachHoc" num="0" />
+
+<Translator page="dynamicApproachHoc" num="1" />
+
+<Translator page="dynamicApproachHoc" num="2" />
+
+```jsx
+// './i18n/index.js'
+const data = {
+  de: {
+    text: "Hallo Welt!",
+  },
+  en: {
+    text: "Hello World!",
+  },
+  es: {
+    text: "!Hola Mundo!",
+  },
+};
+
+export { data };
+```
+
+<Translator page="dynamicApproachHoc" num="3" />
+
+```jsx
+import React from "react";
+import { withI18n } from "../../../src";
+
+import { data } from "./i18n";
+
+const DynamicText = props => (
+  <>
+    <button type="submit" onClick={() => props.translate("en")}>
+      English
+    </button>
+    <button type="submit" onClick={() => props.translate("es")}>
+      Español
+    </button>
+    <button type="submit" onClick={() => props.translate("de")}>
+      Deutsch
+    </button>
+    <div>{props.i18n.text}</div>
+  </>
+);
+
+const DynamicTextWithI18n = withI18n(DynamicText, data);
+
+export { DynamicTextWithI18n as DynamicText };
+```
+
+<Translator page="dynamicApproachHoc" num="4" />
+
+<Playground>
+  <DynamicText lang="en" />
+</Playground>
