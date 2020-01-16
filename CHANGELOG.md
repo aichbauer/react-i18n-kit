@@ -1,3 +1,7 @@
+1.3.0 - January, 16 2020
+
+* 13c718f Feat: support hooks (#4) (Lukas Aichbauer)
+
 1.2.0 - September, 09 2019
 
 * f9d259d Feat: support for ssr (#3) (Lukas Aichbauer)
