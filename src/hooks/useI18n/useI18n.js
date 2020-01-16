@@ -1,28 +1,19 @@
 import { useState } from "react";
-import { browserLanguage } from "../../helper";
-
-const generateLang = options => options.lang || browserLanguage;
-const generateFallback = options => options.fallback || "en";
-
-const generateI18n = (data, lang, fallback) =>
-  data[lang] ||
-  data[lang.split("-")[0]] ||
-  data[fallback] ||
-  data[fallback.split("-")[0]];
+import { getFallback, getLanguage, getI18n } from "../../helper";
 
 const useI18n = (data, options = {}) => {
-  const lang = generateLang(options);
-  const fallback = generateFallback(options);
+  const lang = getLanguage(options);
+  const fallback = getFallback(options);
 
   const [state, setState] = useState({
     lang,
     fallback,
-    i18n: generateI18n(data, lang, fallback),
+    i18n: getI18n(data, lang, fallback),
     translate: language =>
       setState({
         ...state,
         lang,
-        i18n: generateI18n(data, language, fallback),
+        i18n: getI18n(data, language, fallback),
       }),
   });
 

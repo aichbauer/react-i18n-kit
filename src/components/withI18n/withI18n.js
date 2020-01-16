@@ -1,23 +1,20 @@
 import React from "react";
-import { browserLanguage } from "../../helper";
+import { getFallback, getLanguage, getI18n } from "../../helper";
 
 const withI18n = (Component, data, options = {}) =>
   class I18n extends React.Component {
     constructor(props) {
       super(props);
+      const lang = getLanguage(options, props);
+      const fallback = getFallback(options, props);
+
       this.state = {
-        lang: props.lang || options.lang || browserLanguage,
-        fallback: props.fallback || options.fallback || "en",
-        i18n: {},
+        lang,
+        fallback,
+        i18n: getI18n(data, lang, fallback),
       };
 
       this.translate = this.translate.bind(this);
-    }
-
-    componentDidMount() {
-      const { lang } = this.state;
-
-      this.translate(lang);
     }
 
     translate(lang) {

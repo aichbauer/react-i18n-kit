@@ -25,6 +25,28 @@ test("withI18n | state and props | browser languages", () => {
   expect(state).toEqual(en);
 });
 
+test("withI18n | state and props | lang prop de", () => {
+  const MyComponent = withI18n(I18nText, data);
+
+  const wrapper = mount(<MyComponent lang="de" />);
+  const state = wrapper.state();
+  const text = wrapper.find("#text").text();
+
+  expect(text).toEqual(de.i18n.text);
+  expect(state).toEqual(de);
+});
+
+test("withI18n | state and props | lang prop zh, fallback prop de", () => {
+  const MyComponent = withI18n(I18nText, data);
+
+  const wrapper = mount(<MyComponent fallback="de" lang="zh" />);
+  const state = wrapper.state();
+  const text = wrapper.find("#text").text();
+
+  expect(text).toEqual(zhFallbackDe.i18n.text);
+  expect(state).toEqual(zhFallbackDe);
+});
+
 test("withI18n | state and props | options | lang de", () => {
   const MyComponent = withI18n(I18nText, data, { lang: "de" });
 
