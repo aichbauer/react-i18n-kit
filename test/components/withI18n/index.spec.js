@@ -4,7 +4,6 @@ import { configure, mount } from "enzyme";
 
 import { data, de, en, itFallbackDeAT, zhFallbackDe } from "../../fixtures";
 import { withI18n } from "../../../src";
-import { wrap } from "module";
 
 configure({ adapter: new Adapter() });
 
