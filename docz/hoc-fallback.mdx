@@ -1,0 +1,68 @@
+---
+name: Using a Fallback
+menu: Higher Order Component
+---
+
+import { Playground } from "docz";
+import { Translator, TextFallbackHoc as Text } from "./components";
+
+<Translator heading page="fallbackHoc" num="0" />
+
+<Translator page="fallbackHoc" num="0" />
+
+<Translator page="fallbackHoc" num="1" />
+
+<Translator page="fallbackHoc" num="2" />
+
+```jsx
+// ./i18n/index.js
+const data = {
+  de: {
+    text: "Hallo Welt!",
+  },
+  en: {
+    text: "Hello World!",
+  },
+  es: {
+    text: "!Hola Mundo!",
+  },
+};
+
+export { data };
+```
+
+<Translator page="fallbackHoc" num="3" />
+
+<Translator page="fallbackHoc" num="4" />
+
+```jsx
+import React from "react";
+import { withI18n } from "react-i18n-kit";
+
+import { data } from "./i18n";
+
+const Text = props => <div>{props.i18n.text}</div>;
+
+/*
+  Never set a language you do not have a translation for.
+  We just use it as example, so you can see the fallback in your browser.
+*/
+const TextI18n = withI18n(Text, data, {
+  lang: "zh",
+  fallback: "es",
+});
+
+export { TextI18n as Text };
+```
+
+<Translator page="fallbackHoc" num="5" />
+
+<Playground>
+  <Text />
+</Playground>
+
+<Translator page="fallbackHoc" num="6" />
+
+<Playground>
+  <Text lang="zh" fallback="de" />
+</Playground>

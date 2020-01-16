@@ -1,9 +1,8 @@
 ---
 name: Functions
-route: /functions
-order: 2
 ---
 
+import { Playground } from "docz";
 import { Translator } from "./components";
 
 <Translator heading page="functions" num="0" />
@@ -14,23 +13,66 @@ import { Translator } from "./components";
 
 <Translator page="functions" num="1" />
 
-<Translator heading page="functions" num="2" />
+<Translator heading page="functions" num="3" />
 
 <Translator page="functions" num="2" />
+
+
+```js
+const { i18n, translate } = useI18n(data, options);
+```
+
+<Translator page="functions" num="8" />
+
+<Translator heading page="functions" num="4" />
+
+<Translator page="functions" num="6" />
+
+<Translator heading page="functions" num="6" />
+
+<Translator page="functions" num="9" />
+
+```js
+const data = {
+  de: {
+    text: "Hallo Welt!",
+  },
+  en: {
+    text: "Hello World!",
+  },
+};
+```
+
+<Translator heading page="functions" num="7" />
+
+<Translator page="functions" num="10" />
+
+```js
+const options = {
+  lang: "de",
+  fallback: "de",
+};
+```
+
+<Translator heading page="functions" num="2" />
+
+<Translator page="functions" num="3" />
+
+<Translator heading page="functions" num="3" />
+
+<Translator page="functions" num="4" />
 
 ```js
 const i18n = withI18n(Component, data, options);
 ```
 
-<Translator heading page="functions" num="3" />
-
-<Translator page="functions" num="3" />
-
 <Translator heading page="functions" num="4" />
 
-<Translator page="functions" num="4" />
-
 <Translator page="functions" num="5" />
+
+<Translator heading page="functions" num="5" />
+
+<Translator page="functions" num="7" />
 
 ```jsx
 const Text = (props) => (
@@ -46,9 +88,11 @@ const Text = (props) => (
 );
 ```
 
-<Translator heading page="functions" num="5" />
+<Translator page="functions" num="8" />
 
-<Translator page="functions" num="6" />
+<Translator heading page="functions" num="6" />
+
+<Translator page="functions" num="9" />
 
 ```js
 const data = {
@@ -61,11 +105,9 @@ const data = {
 };
 ```
 
-<Translator heading page="functions" num="6" />
+<Translator heading page="functions" num="7" />
 
-<Translator page="functions" num="7" />
-
-<Translator page="functions" num="8" />
+<Translator page="functions" num="10" />
 
 ```js
 const options = {

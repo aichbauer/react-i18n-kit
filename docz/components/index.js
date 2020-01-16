@@ -1,6 +1,17 @@
-import { Text } from "./Text";
-import { DynamicText } from "./DynamicText";
-import { TextFallback } from "./TextFallback";
+import { TextHoc } from "./TextHoc";
+import { TextHook } from "./TextHook";
+import { DynamicTextHoc } from "./DynamicTextHoc";
+import { DynamicTextHook } from "./DynamicTextHook";
+import { TextFallbackHoc } from "./TextFallbackHoc";
+import { TextFallbackHook } from "./TextFallbackHook";
 import { Translator } from "./Translator";
 
-export { DynamicText, Text, TextFallback, Translator };
+export { 
+  DynamicTextHoc,
+  DynamicTextHook,
+  TextHoc,
+  TextHook,
+  TextFallbackHoc,
+  TextFallbackHook,
+  Translator,
+};

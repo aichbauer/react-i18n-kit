@@ -1,0 +1,71 @@
+---
+name: Basic Usage
+menu: Hook
+---
+
+import { Playground } from "docz";
+import { Translator, TextHook as Text } from "./components";
+
+<Translator heading page="basicUsageHook" num="0" />
+
+<Translator page="basicUsageHook" num="0" />
+
+<Translator page="basicUsageHook" num="1" />
+
+```jsx
+// ./i18n/index.js
+const data = {
+  de: {
+    text: "Hallo Welt!",
+  },
+  en: {
+    text: "Hello World!",
+  },
+};
+
+export { data };
+```
+
+<Translator page="basicUsageHook" num="2" />
+
+```jsx
+import React from "react";
+import { useI18n } from "react-i18n-kit";
+
+import { data } from "./i18n";
+
+/*
+  if language is:
+    - en:
+      i18n.text: "Hello World!"
+    - de:
+      i18n.text: "Hallo Welt!"
+*/
+const Text = () => {
+  const { i18n } = useI18n(data)
+
+  return (
+    <div>{i18n.text}</div>
+  );
+};
+
+export { Text };
+```
+
+<Translator page="basicUsageHook" num="3" />
+
+<Playground>
+  <Text />
+</Playground>
+
+<Translator page="basicUsageHook" num="4" />
+
+<Translator page="basicUsageHook" num="5" />
+
+```json
+{
+  "text": "Hello World!"
+}
+```
+
+<Translator page="basicUsageHook" num="6" />
