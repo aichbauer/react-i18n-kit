@@ -1,3 +1,7 @@
+1.4.0 - January, 17 2020
+
+* 04f88a3 Feat: fallback for missing parts in languages (#5) (Lukas Aichbauer)
+
 1.3.0 - January, 16 2020
 
 * 13c718f Feat: support hooks (#4) (Lukas Aichbauer)
