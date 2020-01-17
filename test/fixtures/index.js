@@ -1,4 +1,18 @@
-import { data } from "./data";
-import { de, en, itFallbackDeAT, zhFallbackDe } from "./state";
+import { data, dataWithMissingDeParts } from "./data";
+import {
+  de,
+  en,
+  itFallbackDeAT,
+  zhFallbackDe,
+  deWithEnFallbackParts,
+} from "./state";
 
-export { data, de, en, itFallbackDeAT, zhFallbackDe };
+export {
+  data,
+  dataWithMissingDeParts,
+  de,
+  en,
+  itFallbackDeAT,
+  zhFallbackDe,
+  deWithEnFallbackParts,
+};

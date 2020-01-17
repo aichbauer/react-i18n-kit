@@ -111,6 +111,14 @@ const data = {
       text: ["You need npm", "or yarn", "to install this package."],
       heading: ["# Installation"],
     },
+    fallback: {
+      text: [
+        "In the next example you see that the German (de) translation in the `data` object does not have `text2` key.",
+        'If the fallback language has a key that is not available on the current language, we will fill your `i18n` object with the fallback. So we can savely use the text2 in our Component.',
+        'Here you see that we render the English fallback for `text2`.'
+      ],
+      heading: ["# Fallback (Missing Data)"],
+    },
   },
   de: {
     basicUsageHOC: {
@@ -227,6 +235,14 @@ const data = {
         'um dieses "package" zu installieren.',
       ],
       heading: ["# Installation"],
+    },
+    fallback: {
+      text: [
+        "Im nächsten Beispiel siehst du das für die Deutsche (de) Übersetzung im `data` Objekt die Übersetzung für `text2` fehlt.",
+        'Wenn die Fallbacksprache einen Schlüssel besitzt der auf der aktuellen Sprache nicht existier, wird das `i18n` Objekt mit dem der Fallbacksprache befüllt. So können wir im nächsten Beispiel `text2` sicher in unserer Komponente verwenden.',
+        'Hier siehst du das wir den Englischen Text für `text2` rendern.'
+      ],
+      heading: ["# Fallback (Fehlende Daten)"],
     },
   },
 };

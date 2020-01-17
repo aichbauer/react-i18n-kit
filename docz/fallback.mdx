@@ -1,0 +1,56 @@
+---
+name: Fallback (Missing Data)
+---
+
+import { Playground } from "docz";
+import { Translator, TextHook2 as TextHook } from "./components";
+
+<Translator heading page="fallback" num="0" />
+
+<Translator page="fallback" num="0" />
+
+```js
+// './i18n/index.js'
+const data = {
+  en: {
+    text: "Hello World!",
+    text2: "Hello Universe!",
+  },
+  de: {
+    text: "Hallo Welt!",
+  },
+};
+
+export { data };
+```
+
+<Translator page="fallback" num="1" />
+
+```js
+import React from "react";
+import { useI18n } from "react-i18n-kit";
+
+import { data } from "./i18n";
+
+const TextHook = () => {
+  const { i18n } = useI18n(data, {
+    lang: 'de',
+    fallback: 'en',
+  });
+
+  return (
+    <>
+      <div>{i18n.text}</div>
+      <div>{i18n.text2}</div>
+    </>
+  );
+};
+
+export { TextHook };
+```
+
+<Translator page="index" num="2" />
+
+<Playground>
+  <TextHook />
+</Playground>
